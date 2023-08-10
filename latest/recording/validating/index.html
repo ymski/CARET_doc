@@ -17,7 +17,7 @@
         <link rel="next" href="../cli_tool/">
       
       <link rel="icon" href="../../assets/images/tier4.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.20">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
@@ -798,6 +798,13 @@
           <li class="md-nav__item">
   <a href="#failed-to-find-trace-point-added-by-ld_preload" class="md-nav__link">
     Failed to find trace point added by LD_PRELOAD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trace-data-from-a-package-built-without-caret-rclcpp-was-detected" class="md-nav__link">
+    Trace data from a package built without caret-rclcpp was detected
   </a>
   
 </li>
@@ -2746,6 +2753,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#trace-data-from-a-package-built-without-caret-rclcpp-was-detected" class="md-nav__link">
+    Trace data from a package built without caret-rclcpp was detected
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tracer-discarded" class="md-nav__link">
     Tracer discarded
   </a>
@@ -2855,6 +2869,19 @@
 </li>
 <li>Solution<ul>
 <li>Set <code>LD_PRELOAD</code> before running the application (See <a href="../recording/">recording section</a>)</li>
+</ul>
+</li>
+</ul>
+<h3 id="trace-data-from-a-package-built-without-caret-rclcpp-was-detected"><code>Trace data from a package built without caret-rclcpp was detected</code><a class="headerlink" href="#trace-data-from-a-package-built-without-caret-rclcpp-was-detected" title="Permanent link">#</a></h3>
+<ul>
+<li>Cause<ul>
+<li>Some packages (e.g. packages installed with apt) have been built without using caret-rclcpp.</li>
+</ul>
+</li>
+<li>Solution<ul>
+<li>Build the application with <abbr title="Chain-Aware ROS Evaluation Tool">CARET</abbr> (See <a href="../build_check/">build section</a>)</li>
+<li>If you still get this warning after checking the above,
+  add all packages used in your application to your workspace and build using <abbr title="Chain-Aware ROS Evaluation Tool">CARET</abbr>.</li>
 </ul>
 </li>
 </ul>
@@ -3021,14 +3048,18 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
-        <script src="https://unpkg.com/mermaid@8.13.10/dist/mermaid.min.js"></script>
+        
+          <script src="https://unpkg.com/mermaid@8.13.10/dist/mermaid.min.js"></script>
+        
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
       
     
   </body>
