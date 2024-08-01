@@ -506,6 +506,27 @@
         
           <li class="md-nav__item">
   <a href="#id" class="md-nav__link">
+    v0.5.8 _ Jul 29, 2024
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    v0.5.7 _ Jun 24, 2024
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    v0.5.6 _ May 24, 2024
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
     v0.5.5 _ May 10, 2024
   </a>
   
@@ -2939,6 +2960,27 @@
         
           <li class="md-nav__item">
   <a href="#id" class="md-nav__link">
+    v0.5.8 _ Jul 29, 2024
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    v0.5.7 _ Jun 24, 2024
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    v0.5.6 _ May 24, 2024
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
     v0.5.5 _ May 10, 2024
   </a>
   
@@ -3228,9 +3270,78 @@
 
 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">#</a></h1>
 <h2 id="caret"><abbr title="Chain-Aware ROS Evaluation Tool">CARET</abbr><a class="headerlink" href="#caret" title="Permanent link">#</a></h2>
+<h3 id="id">v0.5.8 <small>_ Jul 29, 2024</small><a class="headerlink" href="#id" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>New</strong>: Add cppcheck to ci. At the same time, the correction of the indicated items in cppcheck is carried out. (<a href="https://github.com/tier4/caret_trace/pull/291">caret_trace #291</a>, <a href="https://github.com/tier4/caret_analyze_cpp_impl/pull/211">caret_analyze_cpp_impl #211</a>)</li>
+</ul>
+<ul>
+<li><strong>Update</strong>: Remove the pull-request trigger in cppcheck-all-files workflow. (<a href="https://github.com/tier4/caret_trace/pull/294">caret_trace #294</a>)</li>
+</ul>
+<ul>
+<li><strong>Update</strong>: Explicitly include some standard headers to support g++13. (<a href="https://github.com/tier4/caret_trace/pull/293">caret_trace #293</a>)</li>
+</ul>
+<ul>
+<li><strong>Fix</strong>: Fixed a PlantUML bug in documentation. (<a href="https://github.com/tier4/caret_doc/pull/348">caret_doc #348</a>)</li>
+</ul>
+<ul>
+<li><strong>Update</strong>: Reviewed import statements not at the beginning of caret_analyze. (<a href="https://github.com/tier4/caret_analyze/pull/510/">caret_analyze #510</a>)</li>
+</ul>
+<ul>
+<li><strong>Update</strong>: Added feature to verify trace points on dds layer. (<a href="https://github.com/tier4/caret_analyze/pull/514">caret_analyze #514</a>)</li>
+</ul>
+<ul>
+<li><strong>Update</strong>: Update docker image used for ci. (<a href="https://github.com/tier4/caret_analyze/pull/515">caret_analyze #515</a>, <a href="https://github.com/tier4/ros2caret/pull/194">ros2caret #194</a>)</li>
+</ul>
+<ul>
+<li><strong>Update</strong>: Fixed to recognize callback groups that are not associated with the executor. (<a href="https://github.com/tier4/caret_analyze/pull/511">caret_analyze #511</a>)</li>
+</ul>
+<h3 id="id">v0.5.7 <small>_ Jun 24, 2024</small><a class="headerlink" href="#id" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Update</strong>: controlling the dds_bind_addr_to_stamp output of <code>generic_publish()</code>. (<a href="https://github.com/tier4/caret_trace/pull/288">caret_trace #288</a>)</li>
+</ul>
+<ul>
+<li><strong>Update</strong>: Build support for caret_analyze_cpp_impl using gcc13. Fixed build failure due to some C++ standard library header changes. (<a href="https://github.com/tier4/caret_analyze_cpp_impl/pull/210">caret_analyze_cpp_impl #210</a>)</li>
+</ul>
+<ul>
+<li><strong>Update</strong>: changed the log level when the executor failed to load. (<a href="https://github.com/tier4/caret_analyze/pull/509">caret_analyze #509</a>)</li>
+</ul>
+<ul>
+<li><strong>Update</strong>: fixed incorrect arguments in rclcpp_service_callback_added. (<a href="https://github.com/tier4/caret_trace/pull/289">caret_trace #289</a>)</li>
+</ul>
+<ul>
+<li><strong>Update</strong>: Unify the description of doxygen comments for methods of the same family declared in tracing_controller.hpp. (<a href="https://github.com/tier4/caret_trace/pull/287">caret_trace #287</a>)</li>
+</ul>
+<h3 id="id">v0.5.6 <small>_ May 24, 2024</small><a class="headerlink" href="#id" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Update</strong>: Fix command to install packages needed to build mkdocs. (<a href="https://github.com/tier4/caret_doc/pull/344">caret_doc #334</a>)</li>
+</ul>
+<ul>
+<li><strong>Fix</strong>: If there is a Subscription callback with the same symbol, it will not be possible to analyze correctly. (<a href="https://github.com/tier4/caret_analyze/pull/460">caret_analyze #460</a>)</li>
+</ul>
+<ul>
+<li><strong>Update</strong>: If <abbr title="OSS-based self-driving software">Autoware</abbr> is started and <abbr title="Chain-Aware ROS Evaluation Tool">CARET</abbr> measurement is started at the same time, some nodes may not be recorded. (<a href="https://github.com/tier4/caret_doc/pull/343">caret_doc #343</a>)</li>
+</ul>
+<ul>
+<li><strong>Fix</strong>: Fixed a bug in NodeStructValue.get_timer (external API). (<a href="https://github.com/tier4/caret_analyze/pull/502">caret_analyze #502</a>)</li>
+</ul>
+<ul>
+<li><strong>Update</strong>: Removed special duplicate check when recording trace events. (<a href="https://github.com/tier4/caret_trace/pull/284">caret_trace #284</a>)</li>
+</ul>
+<ul>
+<li><strong>Fix</strong>: Fixed problem with ros2 caret check_ctf not validating even if a single path is entered. (<a href="https://github.com/tier4/caret_analyze/pull/503">caret_analyze #503</a>)</li>
+</ul>
+<ul>
+<li><strong>Update</strong>: Added output of message_construct trace points during light measurements. (<a href="https://github.com/tier4/ros2caret/pull/187">ros2caret #187</a>)</li>
+</ul>
+<ul>
+<li><strong>Fix</strong>: Fix for segmentation fault occurrence in autoware pandar_node_container (segmentation fault due to race condition). (<a href="https://github.com/tier4/caret_trace/pull/285">caret_trace #285</a>)</li>
+</ul>
+<ul>
+<li><strong>Update</strong>: Provide a filter function suitable for analyzing multiple data. (<a href="https://github.com/tier4/caret_analyze/pull/504">caret_analyze #504</a>)</li>
+</ul>
 <h3 id="id">v0.5.5 <small>_ May 10, 2024</small><a class="headerlink" href="#id" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>New</strong>: Added the feature to measure systems operating with multiple hosts and to analyze the measured data.(<a href="https://github.com/tier4/caret_trace/pull/262">caret_trace #262</a>, <a href="https://github.com/tier4/caret_analyze/pull/455">caret_analyze #445</a>, <a href="https://github.com/tier4/ros2caret/pull/163">ros2caret #163</a>, <a href="https://github.com/tier4/caret_doc/pull/333">caret_doc #333</a>)</li>
+<li><strong>New</strong>: Added the feature to measure systems operating with multiple hosts and to analyze the measured data. (<a href="https://github.com/tier4/caret_trace/pull/262">caret_trace #262</a>, <a href="https://github.com/tier4/caret_analyze/pull/455">caret_analyze #445</a>, <a href="https://github.com/tier4/ros2caret/pull/163">ros2caret #163</a>, <a href="https://github.com/tier4/caret_doc/pull/333">caret_doc #333</a>)</li>
 </ul>
 <h3 id="id">v0.5.4 <small>_ May 7, 2024</small><a class="headerlink" href="#id" title="Permanent link">#</a></h3>
 <ul>
