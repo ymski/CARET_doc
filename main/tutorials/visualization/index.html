@@ -2725,14 +2725,19 @@ jupyter-lab
 </code></pre></div>
 <p><abbr title="Chain-Aware ROS Evaluation Tool">CARET</abbr> uses <a href="https://bokeh.org/"><code>bokeh</code></a> for some visualization APIs.
  Execute the following code for loading <code>bokeh</code></p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">output_notebook</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">output_notebook</span>
 <span class="n">output_notebook</span><span class="p">()</span>
 </code></pre></div>
 </li>
 <li>
 <p>Loading trace data onto Jupyter notebook</p>
 <p>Locate trace data on Jupyter notebook as well as the architecture file.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">caret_analyze</span> <span class="kn">import</span> <span class="n">Architecture</span><span class="p">,</span> <span class="n">Application</span><span class="p">,</span> <span class="n">Lttng</span>
+</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">humble</label><label for="__tabbed_1_2">iron</label><label for="__tabbed_1_3">jazzy</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">caret_analyze</span><span class="w"> </span><span class="kn">import</span> <span class="n">Architecture</span><span class="p">,</span> <span class="n">Application</span><span class="p">,</span> <span class="n">Lttng</span>
 
 <span class="c1"># load the architecture file which is created in the previous page</span>
 <span class="n">arch</span> <span class="o">=</span> <span class="n">Architecture</span><span class="p">(</span><span class="s1">&#39;yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;./architecture.yaml&#39;</span><span class="p">)</span>
@@ -2743,9 +2748,36 @@ jupyter-lab
 <span class="c1"># map the application architecture to recorded data</span>
 <span class="n">app</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span><span class="n">arch</span><span class="p">,</span> <span class="n">lttng</span><span class="p">)</span>
 </code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">caret_analyze</span><span class="w"> </span><span class="kn">import</span> <span class="n">Architecture</span><span class="p">,</span> <span class="n">Application</span><span class="p">,</span> <span class="n">Lttng</span>
+
+<span class="c1"># load the architecture file which is created in the previous page</span>
+<span class="n">arch</span> <span class="o">=</span> <span class="n">Architecture</span><span class="p">(</span><span class="s1">&#39;yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;./architecture.yaml&#39;</span><span class="p">)</span>
+
+<span class="c1"># load recorded data by CARET</span>
+<span class="n">lttng</span> <span class="o">=</span> <span class="n">Lttng</span><span class="p">(</span><span class="s1">&#39;./e2e_sample&#39;</span><span class="p">)</span>
+
+<span class="c1"># map the application architecture to recorded data</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span><span class="n">arch</span><span class="p">,</span> <span class="n">lttng</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">caret_analyze</span><span class="w"> </span><span class="kn">import</span> <span class="n">Architecture</span><span class="p">,</span> <span class="n">Application</span><span class="p">,</span> <span class="n">Lttng</span>
+
+<span class="c1"># load the architecture file which is created in the previous page</span>
+<span class="n">arch</span> <span class="o">=</span> <span class="n">Architecture</span><span class="p">(</span><span class="s1">&#39;yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;./architecture_jazzy.yaml&#39;</span><span class="p">)</span>
+
+<span class="c1"># load recorded data by CARET</span>
+<span class="n">lttng</span> <span class="o">=</span> <span class="n">Lttng</span><span class="p">(</span><span class="s1">&#39;./e2e_sample&#39;</span><span class="p">)</span>
+
+<span class="c1"># map the application architecture to recorded data</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span><span class="n">arch</span><span class="p">,</span> <span class="n">lttng</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 <p>After execution of the code, users will often refer to the <code>app</code> object defined as <code>Application</code> class. The <code>app</code> objects provides users latency of callbacks, communication, and paths. <code>Application</code> class is similar to <code>Architecture</code> class which describes structure of the application and their interfaces are similar. In addition, <code>Application</code> class has interfaces to get latency.</p>
-</li>
-</ol>
 <h2 id="basic-api-to-get-latency">Basic API to get latency<a class="headerlink" href="#basic-api-to-get-latency" title="Permanent link">#</a></h2>
 <p>This section will explain APIs to get callback latency. The following code is one of examples to get callback latency.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Get a callback instance, which has latency information, from app</span>
@@ -2769,7 +2801,7 @@ jupyter-lab
 <p><abbr title="Chain-Aware ROS Evaluation Tool">CARET</abbr> provides some APIs to visualize measured data.
 With message flow, which is one of effective visualizations, users can understand what happens and where is bottleneck in target applications.
 Execute the following code for visualization with message flow.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">caret_analyze.plot</span> <span class="kn">import</span> <span class="n">Plot</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">caret_analyze.plot</span><span class="w"> </span><span class="kn">import</span> <span class="n">Plot</span>
 
 <span class="n">target_path</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s1">&#39;target&#39;</span><span class="p">)</span>
 <span class="n">plot</span> <span class="o">=</span> <span class="n">Plot</span><span class="o">.</span><span class="n">create_message_flow_plot</span><span class="p">(</span><span class="n">target_path</span><span class="p">)</span>
